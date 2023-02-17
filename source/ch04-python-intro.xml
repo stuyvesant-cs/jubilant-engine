@@ -1,0 +1,19 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Python!</title>
+  <section>
+    <title>The Basics</title>
+    <p>
+      As <url href="https://www.python.org/">Python</url> is not your first programming langauge, a good place to start is to think about that things you can do in other languages, and ask how might you do those things in Python?
+      <program language="python" interactive="codelens">
+        <input>
+x = 4
+print("Good News Everyone!", x)
+        </input>
+      </program>
+      <console>
+        <prompt>$ </prompt><input>python main.py</input>
+        <output>Good News Everyone! 4</output>
+      </console>
+    </p>
+  </section>
+  </chapter>

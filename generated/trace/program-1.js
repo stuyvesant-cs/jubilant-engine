@@ -1,0 +1,4 @@
+if (allTraceData === undefined) {
+ var allTraceData = {};
+ }
+ allTraceData[""] = {"code": "x = 4\nprint(\"Good News Everyone!\", x)\n\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 2, "event": "step_line", "func_name": "<module>", "globals": {"x": 4}, "ordered_globals": ["x"], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 2, "event": "return", "func_name": "<module>", "globals": {"x": 4}, "ordered_globals": ["x"], "stack_to_render": [], "heap": {}, "stdout": "Good News Everyone! 4\n"}]}

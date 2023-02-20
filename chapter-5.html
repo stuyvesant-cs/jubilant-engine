@@ -62,38 +62,6 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
-<!--** eBookCongig is necessary to configure interactive       **-->
-<!--** Runestone components to run locally in reader's browser **-->
-<!--** No external communication:                              **-->
-<!--**     log level is 0, Runestone Services are disabled     **-->
-<script type="text/javascript">
-eBookConfig = {};
-eBookConfig.useRunestoneServices = false;
-eBookConfig.host = 'http://127.0.0.1:8000';
-eBookConfig.course = 'PTX_Course_Title_Here';
-eBookConfig.basecourse = 'PTX_Base_Course';
-eBookConfig.isLoggedIn = false;
-eBookConfig.email = '';
-eBookConfig.isInstructor = false;
-eBookConfig.logLevel = 0;
-eBookConfig.username = '';
-eBookConfig.readings = null;
-eBookConfig.activities = null;
-eBookConfig.downloadsEnabled = false;
-eBookConfig.allow_pairs = false;
-eBookConfig.enableScratchAC = true;
-eBookConfig.acDefaultLanguage = 'python';
-eBookConfig.build_info = "";
-eBookConfig.python3 = null;
-eBookConfig.runestone_version = '5.0.1';
-eBookConfig.jobehost = '';
-eBookConfig.proxyuri_runs = '';
-eBookConfig.proxyuri_files = '';
-eBookConfig.enable_chatcodes =  false;
-</script>
-<!--*** Runestone Services ***-->
-<script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.5.0/runtime.ead78978a4e3c14b.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.5.0/637.d54be67956c5c660.bundle.js"></script><script type="text/javascript" src="https://runestone.academy/cdn/runestone/6.5.0/runestone.9ae535a5cdffdcb5.bundle.js"></script><link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.5.0/637.0fa6cababf056764.css">
-<link rel="stylesheet" type="text/css" href="https://runestone.academy/cdn/runestone/6.5.0/runestone.828206f80e9e88d8.css">
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
@@ -233,7 +201,17 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-item"><a href="part-2.html" class="internal"><span class="codenumber">II</span> <span class="title">Python!</span></a></div>
 <ul class="structural"><li class="active">
 <div class="toc-item"><a href="chapter-5.html" class="internal"><span class="codenumber">5</span> <span class="title">Python!</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="chapter-5.html#section-1" class="internal"><span class="codenumber">5.1</span> <span class="title">The Basics</span></a></div></li></ul>
+<ul class="structural">
+<li><div class="toc-item"><a href="chapter-5.html#section-1" class="internal"><span class="codenumber">5.1</span> <span class="title">Programming Environment</span></a></div></li>
+<li><div class="toc-item"><a href="chapter-5.html#section-2" class="internal"><span class="codenumber">5.2</span> <span class="title">Getting Started</span></a></div></li>
+<li>
+<div class="toc-item"><a href="chapter-5.html#section-3" class="internal"><span class="codenumber">5.3</span> <span class="title">Values &amp; Varaiables</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="chapter-5.html#subsection-1" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Literal Valuse</span></a></div></li>
+<li><div class="toc-item"><a href="chapter-5.html#subsection-2" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Variables</span></a></div></li>
+</ul>
+</li>
+</ul>
 </li></ul>
 </li>
 <li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -243,15 +221,67 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Python!</span>
 </h2>
 <section class="section" id="section-1"><h3 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">The Basics</span>
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Programming Environment</span>
 </h3>
-<div class="para" id="p-1">As <a class="external" href="https://www.python.org/" target="_blank">Python</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> is not your first programming langauge, a good place to start is to think about that things you can do in other languages, and ask how might you do those things in Python? <div class="ptx-runestone-container"><div class="runestone codelens">
-<div class="cd_section" data-component="codelens" data-question_label=""><div class="pytutorVisualizer" id="" data-params='{"embeddedMode": true, "lang": "python", "jumpToEnd": false}'></div></div>
-<script src="generated/trace/program-1.js"></script>
-</div></div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console"><span class="prompt unselectable">$ </span><b>python main.py
-</b>Good News Everyone! 4
+<div class="para" id="p-1">As <a class="external" href="https://www.python.org/" target="_blank">Python</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> is not your first programming langauge, a good place to start is to think about that things you can do in other languages, and ask how might you do those things in Python? But before we get to that, we should probably start with how to write and run a python program.</div>
+<div class="para" id="p-2">Python is an incredibly popular programming and as such, there are lot of different ways to write and run your programs. Most of these fall into 2 broad categoies either <em class="emphasis">Integrated Development Environment (IDE)</em>) or <em class="emphasis">Text Edtior + Terminal</em>. For right now, we'll focus on the IDE approach</div>
+<div class="para" id="p-3">An IDE is just fancy talk for something you're already familiar with, since it is how you programmed in both NetLogo and Racket. An IDE is a computer program where you both write and run your code. When you used <em class="emphasis">DrRacket</em>, you would write your Racket code in the top pane, click <em class="emphasis">Run</em> and then see the result of your program in the bottom pane. The bottom pane also provided you with an interative console to test out small functions. If you want to use an IDE for Python, I highly suggest using <a class="external" href="https://thonny.org/" target="_blank">Thonny</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a>, which provides an environment that will feel familiar. (Python also comes with its own IDE called Idle, which will be installed along with Python if you install from the main Python website.)</div></section><section class="section" id="section-2"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Getting Started</span>
+</h3>
+<div class="para" id="p-4">Now that you're ready to write and run code, let's get going! As a computer science  instructor, I am legally required to start with <a class="external" href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program" target="_blank">"hello, world"</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a>: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">print("Good News Everyone!")
+</code></pre></div>
+</div>
+<div class="para" id="p-5">When run, you should see this: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="console">Good News Everyone!
 </pre></div>
-</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.python.org/</code></div></div>
+</div>
+<div class="para logical" id="p-6">
+<div class="para">Ok, now that that's out of the way, let's get into some more interesting things. Actaully, we will start with the program above, as it does demonstrate the most useful function in Python, <code class="code-inline tex2jax_ignore">print()</code>. At its core, <code class="code-inline tex2jax_ignore">print()</code> will attempt to display whatver arguments you pass into it in the console, followed by a newline. What's quite nice about <code class="code-inline tex2jax_ignore">print()</code> is that you can give it multiple arguments, separated by <code class="code-inline tex2jax_ignore">,</code> and it will print each agrument to the console on one line, separated by spaces. So: <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-py">print("Hi", 5)
+</code></pre></div> Will output:</div>
+<pre class="code-display tex2jax_ignore">
+        Hi 5
+      </pre>
+</div>
+<ul class="disc">
+<li id="li-1"><div class="para" id="p-derived-li-1">Perform arithmetic operations on numbers.</div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2">Perform comparason operations on numbers.</div></li>
+<li id="li-3"><div class="para" id="p-derived-li-3">Use boolean (<em class="emphasis">True, False</em>) values, perform boolean operations.</div></li>
+<li id="li-4"><div class="para" id="p-derived-li-4">Make program decisions using conditional statements.</div></li>
+<li id="li-5"><div class="para" id="p-derived-li-5">Write out own functions.</div></li>
+<li id="li-6"><div class="para" id="p-derived-li-6">Run sections of code repeatedly.</div></li>
+</ul></section><section class="section" id="section-3"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Values &amp; Varaiables</span>
+</h3>
+<section class="subsection" id="subsection-1"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Literal Valuse</span>
+</h4>
+<div class="para logical" id="p-7">
+<div class="para">In code, a <em class="emphasis">literal value</em> is something whose value is exactly as it appears in code. For example, when you see a <code class="code-inline tex2jax_ignore">51</code> in code, you know it represents the numeric value 51, you cannot assign it another value, or change it in any way. There are a few literal data types in Python, this is a good list to get started with:</div>
+<ul class="disc">
+<li id="li-7"><div class="para" id="p-derived-li-7">
+<em class="emphasis">Integers</em>: Numbers (positive or negative), without a <code class="code-inline tex2jax_ignore">.</code>. e.g. <code class="code-inline tex2jax_ignore">33</code>, <code class="code-inline tex2jax_ignore">-24601</code>
+</div></li>
+<li id="li-8"><div class="para" id="p-derived-li-8">
+<em class="emphasis">Float Points</em>: Numbers (positive or negative) that contain a <code class="code-inline tex2jax_ignore">.</code> (no numbers should have <code class="code-inline tex2jax_ignore">,</code>s). e.g. <code class="code-inline tex2jax_ignore">6.022</code>
+</div></li>
+<li id="li-9"><div class="para" id="p-derived-li-9">
+<em class="emphasis">Strings</em>: A series of characters placed inside quatation marks. In python, you can enclose single line strings in double quotes <code class="code-inline tex2jax_ignore">""</code> or single quotes <code class="code-inline tex2jax_ignore">''</code>, there is no difference between the two. If you want to have a multi-line string, you can use triple-double quotes <code class="code-inline tex2jax_ignore">""" """</code>. We'll go into much more detail on strings later.</div></li>
+<li id="li-10"><div class="para" id="p-derived-li-10">
+<em class="emphasis">Boolean Values</em>: In python, booleans are represented as <code class="code-inline tex2jax_ignore">True</code> and <code class="code-inline tex2jax_ignore">False</code>.</div></li>
+</ul>
+</div></section><section class="subsection" id="subsection-2"><h4 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Variables</span>
+</h4>
+<div class="para logical" id="p-8">
+<div class="para">A <em class="emphasis">variable</em> is a value that can (potentially) change while a program as runnning (as opposed to literals). Becuase variables can change, there are two different parts of any variable; its <em class="emphasis">name</em> and its <em class="emphasis">value</em>. A variable's name is important becuase it will allow us to keep track of the same piece of data regardless of how its value changes over time. Here are the rules for variable names in Python:</div>
+<ul class="disc">
+<li id="li-11"><div class="para" id="p-derived-li-11">Names can only contain upper (<code class="code-inline tex2jax_ignore">A-Z</code>) and lower (<code class="code-inline tex2jax_ignore">a-z</code>) case letters, digits (<code class="code-inline tex2jax_ignore">0-9</code>) and underscores (<code class="code-inline tex2jax_ignore">_</code>). Notable, this means no spaces in names!</div></li>
+<li id="li-12"><div class="para" id="p-derived-li-12">Names cannot <em class="emphasis">start</em> with numeric digits.</div></li>
+<li id="li-13"><div class="para" id="p-derived-li-13">Names are case sensitive. i.e. <code class="code-inline tex2jax_ignore">ypos</code> and <code class="code-inline tex2jax_ignore">yPos</code> would be two different variables.</div></li>
+</ul>
+<div class="para"><aside class="aside aside-like" id="aside-1"><div class="para" id="p-9">This is actaully a pretty good set of rules to help guide you when naming variables in any programming language. Some languages are less restrictive, and some may have occassional odd rules (like not being case sensitive), but if you're learning a new language and stick to theses guidelines, you'll probbaly be safe.</div></aside></div>
+</div></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.python.org/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">thonny.org/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/%22Hello,_World!%22_program</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="part-2.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

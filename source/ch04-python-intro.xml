@@ -1,19 +1,98 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Python!</title>
   <section>
-    <title>The Basics</title>
+    <title>Programming Environment</title>
     <p>
-      As <url href="https://www.python.org/">Python</url> is not your first programming langauge, a good place to start is to think about that things you can do in other languages, and ask how might you do those things in Python?
-      <program language="python" interactive="codelens">
+      As <url href="https://www.python.org/">Python</url> is not your first programming langauge, a good place to start is to think about that things you can do in other languages, and ask how might you do those things in Python? But before we get to that, we should probably start with how to write and run a python program.
+    </p>
+    <p>
+      Python is an incredibly popular programming and as such, there are lot of different ways to write and run your programs. Most of these fall into 2 broad categoies either <em>Integrated Development Environment (IDE)</em>) or <em>Text Edtior + Terminal</em>. For right now, we'll focus on the IDE approach
+    </p>
+    <p>
+      An IDE is just fancy talk for something you're already familiar with, since it is how you programmed in both NetLogo and Racket. An IDE is a computer program where you both write and run your code. When you used <em>DrRacket</em>, you would write your Racket code in the top pane, click <em>Run</em> and then see the result of your program in the bottom pane. The bottom pane also provided you with an interative console to test out small functions. If you want to use an IDE for Python, I highly suggest using <url href="https://thonny.org/">Thonny</url>, which provides an environment that will feel familiar. (Python also comes with its own IDE called Idle, which will be installed along with Python if you install from the main Python website.)
+    </p>
+    <!--
+    <p>
+      The other programming option is to use separate programs to write and run your code. For writting, you should use a <url href="https://en.wikipedia.org/wiki/Text_editor">Text Editor</url>, a program specifically designed to work with plain text files (as opposed to formatted text like .doc or .rtf files). Computer programs (text-based ones at least) are always written as plain text files. Your operating system probably came with a Text Editor, but if you are planning on doing this it is worth your while to get a more programmer-friendly editor. A few suggestions:
+      <ul>
+        <li>For Windows: <url href="https://notepad-plus-plus.org/downloads/">NotePad++</url></li>
+        <li>For Mac: <url href="https://macromates.com/">TextMate</url></li>
+        <li><url href="https://pulsar-edit.dev/">Pulsar</url> is a new editor with version for Mac, Windows and Linux. It is an open source continuation of the once very popular <url href="https://github.blog/2022-06-08-sunsetting-atom/">Atom</url> editor, which has been discontinued by GitHub</li>
+      </ul>
+      Once you've settled on an editor, you will need to run Python code via the
+    </p>
+    -->
+  </section>
+  <section>
+    <title>Getting Started</title>
+    <p>
+      Now that you're ready to write and run code, let's get going! As a computer science  instructor, I am legally required to start with <url href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">"hello, world"</url>:
+
+      <program language="python">
         <input>
-x = 4
-print("Good News Everyone!", x)
+          print("Good News Everyone!")
         </input>
       </program>
+    </p>
+    <p>
+      When run, you should see this:
       <console>
-        <prompt>$ </prompt><input>python main.py</input>
-        <output>Good News Everyone! 4</output>
+        <output>Good News Everyone!</output>
       </console>
     </p>
+    <p>
+      Ok, now that that's out of the way, let's get into some more interesting things. Actaully, we will start with the program above, as it does demonstrate the most useful function in Python, <c>print()</c>. At its core, <c>print()</c> will attempt to display whatver arguments you pass into it in the console, followed by a newline. What's quite nice about <c>print()</c> is that you can give it multiple arguments, separated by <c>,</c> and it will print each agrument to the console on one line, separated by spaces. So:
+      <program language="python">
+        <input>
+          print("Hi", 5)
+        </input>
+      </program>
+      Will output:
+      <cd>
+        Hi 5
+      </cd>
+    </p>
+    With that out of the way, we can now focus on the common programming tools that we have seen before in Racket and NetLogo, so we can start Python on some familiar ground. Here's a reasonable list of things that could be done in both langauges:
+    <ul>
+      <li>Perform arithmetic operations on numbers.</li>
+      <li>Perform comparason operations on numbers.</li>
+      <li>Use boolean (<em>True, False</em>) values, perform boolean operations.</li>
+      <li>Make program decisions using conditional statements.</li>
+      <li>Write out own functions.</li>
+      <li>Run sections of code repeatedly.</li>
+    </ul>
+    We will look at all these tools in the next section, whith a slight detour at the beginning to discuss  values, variables and data types.
   </section>
-  </chapter>
+  <section>
+    <title>Values &amp; Varaiables</title>
+    <subsection>
+      <title>Literal Valuse</title>
+      <p>
+        In code, a <em>literal value</em> is something whose value is exactly as it appears in code. For example, when you see a <c>51</c> in code, you know it represents the numeric value 51, you cannot assign it another value, or change it in any way. There are a few literal data types in Python, this is a good list to get started with:
+        <ul>
+          <li><em>Integers</em>: Numbers (positive or negative), without a <c>.</c>. e.g. <c>33</c>, <c>-24601</c></li>
+          <li><em>Float Points</em>: Numbers (positive or negative) that contain a <c>.</c> (no numbers should have <c>,</c>s). e.g. <c>6.022</c></li>
+          <li><em>Strings</em>: A series of characters placed inside quatation marks. In python, you can enclose single line strings in double quotes <c>""</c> or single quotes <c>''</c>, there is no difference between the two. If you want to have a multi-line string, you can use triple-double quotes <c>""" """</c>. We'll go into much more detail on strings later.</li>
+          <li><em>Boolean Values</em>: In python, booleans are represented as <c>True</c> and <c>False</c>.</li>
+        </ul>
+      </p>
+    </subsection>
+    <subsection>
+      <title>Variables</title>
+      <p>
+        A <em>variable</em> is a value that can (potentially) change while a program as runnning (as opposed to literals). Becuase variables can change, there are two different parts of any variable; its <em>name</em> and its <em>value</em>. A variable's name is important becuase it will allow us to keep track of the same piece of data regardless of how its value changes over time. Here are the rules for variable names in Python:
+        <ul>
+          <li>Names can only contain upper (<c>A-Z</c>) and lower (<c>a-z</c>) case letters, digits (<c>0-9</c>) and underscores (<c>_</c>). Notable, this means no spaces in names!</li>
+          <li>Names cannot <em>start</em> with numeric digits.</li>
+          <li>Names are case sensitive. i.e. <c>ypos</c> and <c>yPos</c> would be two different variables.</li>
+        </ul>
+        <aside>
+          <p>
+            This is actaully a pretty good set of rules to help guide you when naming variables in any programming language. Some languages are less restrictive, and some may have occassional odd rules (like not being case sensitive), but if you're learning a new language and stick to theses guidelines, you'll probbaly be safe.
+          </p>
+        </aside>
+      </p>
+    </subsection>
+  </section>
+
+</chapter>

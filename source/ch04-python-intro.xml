@@ -52,16 +52,18 @@
         Hi 5
       </cd>
     </p>
-    With that out of the way, we can now focus on the common programming tools that we have seen before in Racket and NetLogo, so we can start Python on some familiar ground. Here's a reasonable list of things that could be done in both langauges:
-    <ul>
-      <li>Perform arithmetic operations on numbers.</li>
-      <li>Perform comparason operations on numbers.</li>
-      <li>Use boolean (<em>True, False</em>) values, perform boolean operations.</li>
-      <li>Make program decisions using conditional statements.</li>
-      <li>Write out own functions.</li>
-      <li>Run sections of code repeatedly.</li>
-    </ul>
-    We will look at all these tools in the next section, whith a slight detour at the beginning to discuss  values, variables and data types.
+    <p>
+      With that out of the way, we can now focus on the common programming tools that we have seen before in Racket and NetLogo, so we can start Python on some familiar ground. Here's a reasonable list of things that could be done in both langauges:
+      <ul>
+        <li>Perform arithmetic operations on numbers.</li>
+        <li>Perform comparason operations on numbers.</li>
+        <li>Use boolean (<em>True, False</em>) values, perform boolean operations.</li>
+        <li>Make program decisions using conditional statements.</li>
+        <li>Write out own functions.</li>
+        <li>Run sections of code repeatedly.</li>
+      </ul>
+      We will look at all these tools in the next section, whith a slight detour at the beginning to discuss  values, variables and data types.
+    </p>
   </section>
   <section>
     <title>Values &amp; Varaiables</title>

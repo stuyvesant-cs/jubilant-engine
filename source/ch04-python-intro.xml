@@ -68,7 +68,7 @@
   <section>
     <title>Values &amp; Varaiables</title>
     <subsection>
-      <title>Literal Valuse</title>
+      <title>Literal Values</title>
       <p>
         In code, a <em>literal value</em> is something whose value is exactly as it appears in code. For example, when you see a <c>51</c> in code, you know it represents the numeric value 51, you cannot assign it another value, or change it in any way. There are a few literal data types in Python, this is a good list to get started with:
         <ul>
@@ -82,17 +82,58 @@
     <subsection>
       <title>Variables</title>
       <p>
-        A <em>variable</em> is a value that can (potentially) change while a program as runnning (as opposed to literals). Becuase variables can change, there are two different parts of any variable; its <em>name</em> and its <em>value</em>. A variable's name is important becuase it will allow us to keep track of the same piece of data regardless of how its value changes over time. Here are the rules for variable names in Python:
-        <ul>
-          <li>Names can only contain upper (<c>A-Z</c>) and lower (<c>a-z</c>) case letters, digits (<c>0-9</c>) and underscores (<c>_</c>). Notable, this means no spaces in names!</li>
-          <li>Names cannot <em>start</em> with numeric digits.</li>
-          <li>Names are case sensitive. i.e. <c>ypos</c> and <c>yPos</c> would be two different variables.</li>
-        </ul>
+        A <em>variable</em> is a value that can (potentially) change while a program as runnning (as opposed to literals). Becuase variables can change, there are two different parts of any variable; its <em>name</em> and its <em>value</em>. When you need a variable in Python, you just type the name you want to give it, and <em>assign</em> it a value using <c>=</c>. Here are a few examples of variable creation &amp; assignment:
+
+        <program language="python">
+          <input>
+            s = "ahoy!"
+            fred = True
+            top_score = 100
+          </input>
+        </program>
+
+        A variable's name is important becuase it will allow us to keep track of the same piece of data regardless of how its value changes over time. Here are the rules for variable names in Python:
         <aside>
           <p>
             This is actaully a pretty good set of rules to help guide you when naming variables in any programming language. Some languages are less restrictive, and some may have occassional odd rules (like not being case sensitive), but if you're learning a new language and stick to theses guidelines, you'll probbaly be safe.
           </p>
         </aside>
+
+        <ul>
+          <li>Names can only contain upper (<c>A-Z</c>) and lower (<c>a-z</c>) case letters, digits (<c>0-9</c>) and underscores (<c>_</c>). Notable, this means no spaces in names!</li>
+          <li>Names cannot <em>start</em> with numeric digits.</li>
+          <li>Names are case sensitive. i.e. <c>ypos</c> and <c>yPos</c> would be two different variables.</li>
+        </ul>
+
+      </p>
+    </subsection>
+    <subsection>
+      <title>Variable Types</title>
+      <p>
+        A variable can represent any kind of data, and we call the kind of data that a variable refers to its <em>type</em>. When you assign a value to a variable, you are also giving that variable a type. In the example above the variable <c>top_score</c> is given the value <c>100</c>, which also means that <c>top_score</c> is an <em>integer</em> type.
+        <aside>
+          <p>
+            Technically, this is called <em>dynamic</em> typing. That is to say Python figures out the type for your variables while the program is running. This is in contrast to other langauges (like Java, for example), where you have to explicitely declare the type for any variable before you use it. That is called <em>static</em> typing.
+          </p>
+        </aside>
+      </p>
+      <p>
+        A variable's type helps Python keep track of what we're allowed to do with the variable. For example, since <c>s</c> is a string, we would not be able to use arithmetic operations on it, like <c>s / 2</c>. If you tried to run that line in Python, you would get a <c>TypeError</c>, which is a pretty good name to help describe what went wrong.
+      </p>
+      <p>
+        At any point, you can reassign (using <c>=</c>) a variable to any value you like, regardless of type. When you do this, it will update the type of the variable automatically. So the following code is valid:
+        <program language="python">
+          <input>
+            s = "this is a string!"
+            print(s)
+            s = -84
+            print(s - 3)
+          </input>
+        </program>
+        Just to be clear, if we didn't have <c>s = -84</c>, then the subsequent line would not work, resulting in a <c>TypeError</c>.
+      </p>
+      <p>
+        One last note about types. There is a special literal value in Python, <c>None</c>. One use of <c>None</c> is when you know you're going to need a variable, but you don't have a value for it. The type for <c>None</c> is, conveniently, <c>NoneType</c>. When you're starting out in Python, you <em>shouldn't</em> run into <c>None</c>, but its fairly easy to make a mistake that results in <c>None</c> as a value, at which point you'll get some kind of message that won't make any sense at all if you didn't know about <c>None</c>.
       </p>
     </subsection>
   </section>

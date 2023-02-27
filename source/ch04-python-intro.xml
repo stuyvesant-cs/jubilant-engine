@@ -41,7 +41,7 @@
       </console>
     </p>
     <p>
-      Ok, now that that's out of the way, let's get into some more interesting things. Actaully, we will start with the program above, as it does demonstrate the most useful function in Python, <c>print()</c>. At its core, <c>print()</c> will attempt to display whatver arguments you pass into it in the console, followed by a newline. What's quite nice about <c>print()</c> is that you can give it multiple arguments, separated by <c>,</c> and it will print each agrument to the console on one line, separated by spaces. So:
+      While simple, the code above does demonstrate the most useful function in Python, <c>print()</c>. At its core, <c>print()</c> will attempt to display whatver arguments you pass into it in the console, followed by a newline. What's quite nice about <c>print()</c> is that you can give it multiple arguments, separated by <c>,</c> and it will print each agrument to the console on one line, separated by spaces. So:
       <program language="python">
         <input>
           print("Hi", 5)

@@ -147,8 +147,84 @@
         <li><c>*</c> for multiplication</li>.
         <li><c>/</c> for division</li>.
       </ul>
-      These operations work as you would expect. If you have two number values (either literals or variables), you can perform an operation on them by placing
+      These operations work as you would expect. If you have two number values (either literals or variables), you can perform an operation on them using infix notataion (i.e. <c>x + 5</c>, <c>9.76 - 4</c>).
+    </p>
+    <p>
+      With one spectial exception, if you use 2 values of the same number type (integer or floating point), the result will be a value of the same type. If the types are mixed, the result will be a floating point. The one exception is <c>/</c>, which <em>always</em> returns a floating point value, regardless of whether the divsion could result in an integer value.
+
+      <sidebyside>
+        <program language="python">
+          <input>
+            print(10 * 5)
+            print(8.4 + 2.3)
+            print(10 - 3.0)
+            print(32 / 8)
+            print(32 / 5)
+          </input>
+        </program>
+        <console>
+          <output>
+            50
+            10.7
+            7.0
+            4.0
+            6.4
+          </output>
+        </console>
+      </sidebyside>
+    </p>
+    <p>
+      There are also a few other arithmetic operators that Python offers that are not as universal amongst programing languages:
+      <ul>
+        <li><c>//</c> for floor division. Unlike normal division, <c>a // b</c> will return the <em>floor</em> of <m>a/b</m></li>.
+        <li><c>%</c> for modulo. Given positive values, the result of <c>a % b</c> will be the remainder of <m>a / b</m></li>.
+        <li><c>**</c> for exponentiation.</li>.
+      </ul>
+      For these operations, the result will always match the type of the operands if the operands are the same, but will be a floating point in the case of mixed operands.
+      <sidebyside>
+        <program language="python">
+          <input>
+            print(10 // 4)
+            print(10 // -4)
+            print(10 % 3)
+            print(2**3.0)
+          </input>
+        </program>
+        <console>
+          <output>
+            2
+            -3
+            1
+            8.0
+          </output>
+        </console>
+      </sidebyside>
     </p>
   </section>
-
+  <section>
+    <title>Comparason Operations</title>
+    <p>
+      The second item on our list of programming tools we've used before, was <em>Perform comparason operations on numbers</em>. These operators take numbers as parameters and return boolean values based on the result.
+      <ul>
+        <li><c>></c> for greater than</li>.
+        <li><c>>=</c> for greater than or equal</li>.
+        <li><c>&lt;</c> for less than</li>.
+        <li><c>&lt;=</c> for less than or equal</li>.
+        <li><c>==</c> for equals</li>.
+        <li><c>!=</c> for not equals</li>.
+      </ul>
+      Most of theses are straighforward. The main thing you should pay attention to is the difference between <c>=</c> and <c>==</c> in python code. <c>=</c> is always for assignment, never for comparason. If you want to check the equality of two values, you <em>must</em> use <c>==</c>.
+    </p>
+  </section>
+  <section>
+    <title>Boolean Operations</title>
+    <p>
+      The third item on our list of programming tools we've used before, was <em>Use boolean (True, False) values, perform boolean operations</em>. We've already covered boolean values. Boolean operators take boolean values as parameters and return boolean values based on the result.
+      <ul>
+        <li><c>and</c>: <c>p and q</c> is <c>True</c> when <c>p</c> and <c>q</c> are <em>both</em> <c>True</c>, and <c>False</c> for all other cases</li>.
+        <li><c>or</c>: <c>p or q</c> is <c>False</c> when <c>p</c> and <c>q</c> are <em>both</em> <c>False</c>, and <c>True</c> for all other cases</li>.
+        <li><c>not</c>: <c>!p</c> returns the opposite boolean value of <c>p</c></li>.
+      </ul>
+    </p>
+  </section>
 </chapter>

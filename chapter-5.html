@@ -212,6 +212,9 @@ window.MathJax = {
 <li><div class="toc-item"><a href="chapter-5.html#subsection-3" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Variable Types</span></a></div></li>
 </ul>
 </li>
+<li><div class="toc-item"><a href="chapter-5.html#section-4" class="internal"><span class="codenumber">5.4</span> <span class="title">Arithmetic Operations</span></a></div></li>
+<li><div class="toc-item"><a href="chapter-5.html#section-5" class="internal"><span class="codenumber">5.5</span> <span class="title">Comparason Operations</span></a></div></li>
+<li><div class="toc-item"><a href="chapter-5.html#section-6" class="internal"><span class="codenumber">5.6</span> <span class="title">Boolean Operations</span></a></div></li>
 </ul>
 </li></ul>
 </li>
@@ -298,7 +301,98 @@ print(s)
 s = -84
 print(s - 3)
 </code></pre></div> Just to be clear, if we didn't have <code class="code-inline tex2jax_ignore">s = -84</code>, then the subsequent line would not work, resulting in a <code class="code-inline tex2jax_ignore">TypeError</code>.</div>
-<div class="para" id="p-15">One last note about types. There is a special literal value in Python, <code class="code-inline tex2jax_ignore">None</code>. One use of <code class="code-inline tex2jax_ignore">None</code> is when you know you're going to need a variable, but you don't have a value for it. The type for <code class="code-inline tex2jax_ignore">None</code> is, conveniently, <code class="code-inline tex2jax_ignore">NoneType</code>. When you're starting out in Python, you <em class="emphasis">shouldn't</em> run into <code class="code-inline tex2jax_ignore">None</code>, but its fairly easy to make a mistake that results in <code class="code-inline tex2jax_ignore">None</code> as a value, at which point you'll get some kind of message that won't make any sense at all if you didn't know about <code class="code-inline tex2jax_ignore">None</code>.</div></section></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.python.org/</code></div></div>
+<div class="para" id="p-15">One last note about types. There is a special literal value in Python, <code class="code-inline tex2jax_ignore">None</code>. One use of <code class="code-inline tex2jax_ignore">None</code> is when you know you're going to need a variable, but you don't have a value for it. The type for <code class="code-inline tex2jax_ignore">None</code> is, conveniently, <code class="code-inline tex2jax_ignore">NoneType</code>. When you're starting out in Python, you <em class="emphasis">shouldn't</em> run into <code class="code-inline tex2jax_ignore">None</code>, but its fairly easy to make a mistake that results in <code class="code-inline tex2jax_ignore">None</code> as a value, at which point you'll get some kind of message that won't make any sense at all if you didn't know about <code class="code-inline tex2jax_ignore">None</code>.</div></section></section><section class="section" id="section-4"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Arithmetic Operations</span>
+</h3>
+<div class="para logical" id="p-16">
+<div class="para">Back to our list of programming tools we've used before, the first item was <em class="emphasis">Perform arithmetic operations on numbers</em>. We took a slight detour to discuss variables and types, largely because those things will be useful in demonstrating the other programming tools. Python has the same basic arithmetic operations as Racket and NetLogo, namely:</div>
+<ul class="disc">
+<li id="li-14"><div class="para" id="p-derived-li-14">
+<code class="code-inline tex2jax_ignore">+</code> for addition</div></li>
+<li id="li-15"><div class="para" id="p-derived-li-15">
+<code class="code-inline tex2jax_ignore">-</code> for subtraction</div></li>
+<li id="li-16"><div class="para" id="p-derived-li-16">
+<code class="code-inline tex2jax_ignore">*</code> for multiplication</div></li>
+<li id="li-17"><div class="para" id="p-derived-li-17">
+<code class="code-inline tex2jax_ignore">/</code> for division</div></li>
+</ul>
+<div class="para">These operations work as you would expect. If you have two number values (either literals or variables), you can perform an operation on them using infix notataion (i.e. <code class="code-inline tex2jax_ignore">x + 5</code>, <code class="code-inline tex2jax_ignore">9.76 - 4</code>).</div>
+</div>
+<div class="para" id="p-17">With one spectial exception, if you use 2 values of the same number type (integer or floating point), the result will be a value of the same type. If the types are mixed, the result will be a floating point. The one exception is <code class="code-inline tex2jax_ignore">/</code>, which <em class="emphasis">always</em> returns a floating point value, regardless of whether the divsion could result in an integer value. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><pre class="program"><code class="language-py">print(10 * 5)
+print(8.4 + 2.3)
+print(10 - 3.0)
+print(32 / 8)
+print(32 / 5)
+</code></pre></div>
+<div class="sbspanel top" style="width:50%;"><pre class="console">50
+10.7
+7.0
+4.0
+6.4
+</pre></div>
+</div></div>
+</div>
+<div class="para logical" id="p-18">
+<div class="para">There are also a few other arithmetic operators that Python offers that are not as universal amongst programing languages:</div>
+<ul class="disc">
+<li id="li-18"><div class="para" id="p-derived-li-18">
+<code class="code-inline tex2jax_ignore">//</code> for floor division. Unlike normal division, <code class="code-inline tex2jax_ignore">a // b</code> will return the <em class="emphasis">floor</em> of <span class="process-math">\(a/b\)</span>
+</div></li>
+<li id="li-19"><div class="para" id="p-derived-li-19">
+<code class="code-inline tex2jax_ignore">%</code> for modulo. Given positive values, the result of <code class="code-inline tex2jax_ignore">a % b</code> will be the remainder of <span class="process-math">\(a / b\)</span>
+</div></li>
+<li id="li-20"><div class="para" id="p-derived-li-20">
+<code class="code-inline tex2jax_ignore">**</code> for exponentiation.</div></li>
+</ul>
+<div class="para">For these operations, the result will always match the type of the operands if the operands are the same, but will be a floating point in the case of mixed operands. <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><pre class="program"><code class="language-py">print(10 // 4)
+print(10 // -4)
+print(10 % 3)
+print(2**3.0)
+</code></pre></div>
+<div class="sbspanel top" style="width:50%;"><pre class="console">2
+-3
+1
+8.0
+</pre></div>
+</div></div>
+</div>
+</div></section><section class="section" id="section-5"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Comparason Operations</span>
+</h3>
+<div class="para logical" id="p-19">
+<div class="para">The second item on our list of programming tools we've used before, was <em class="emphasis">Perform comparason operations on numbers</em>. These operators take numbers as parameters and return boolean values based on the result.</div>
+<ul class="disc">
+<li id="li-21"><div class="para" id="p-derived-li-21">
+<code class="code-inline tex2jax_ignore">&gt;</code> for greater than</div></li>
+<li id="li-22"><div class="para" id="p-derived-li-22">
+<code class="code-inline tex2jax_ignore">&gt;=</code> for greater than or equal</div></li>
+<li id="li-23"><div class="para" id="p-derived-li-23">
+<code class="code-inline tex2jax_ignore">&lt;</code> for less than</div></li>
+<li id="li-24"><div class="para" id="p-derived-li-24">
+<code class="code-inline tex2jax_ignore">&lt;=</code> for less than or equal</div></li>
+<li id="li-25"><div class="para" id="p-derived-li-25">
+<code class="code-inline tex2jax_ignore">==</code> for equals</div></li>
+<li id="li-26"><div class="para" id="p-derived-li-26">
+<code class="code-inline tex2jax_ignore">!=</code> for not equals</div></li>
+</ul>
+<div class="para">Most of theses are straighforward. The main thing you should pay attention to is the difference between <code class="code-inline tex2jax_ignore">=</code> and <code class="code-inline tex2jax_ignore">==</code> in python code. <code class="code-inline tex2jax_ignore">=</code> is always for assignment, never for comparason. If you want to check the equality of two values, you <em class="emphasis">must</em> use <code class="code-inline tex2jax_ignore">==</code>.</div>
+</div></section><section class="section" id="section-6"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.6</span> <span class="title">Boolean Operations</span>
+</h3>
+<div class="para logical" id="p-20">
+<div class="para">The third item on our list of programming tools we've used before, was <em class="emphasis">Use boolean (True, False) values, perform boolean operations</em>. We've already covered boolean values. Boolean operators take boolean values as parameters and return boolean values based on the result.</div>
+<ul class="disc">
+<li id="li-27"><div class="para" id="p-derived-li-27">
+<code class="code-inline tex2jax_ignore">and</code>: <code class="code-inline tex2jax_ignore">p and q</code> is <code class="code-inline tex2jax_ignore">True</code> when <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">q</code> are <em class="emphasis">both</em> <code class="code-inline tex2jax_ignore">True</code>, and <code class="code-inline tex2jax_ignore">False</code> for all other cases</div></li>
+<li id="li-28"><div class="para" id="p-derived-li-28">
+<code class="code-inline tex2jax_ignore">or</code>: <code class="code-inline tex2jax_ignore">p or q</code> is <code class="code-inline tex2jax_ignore">False</code> when <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">q</code> are <em class="emphasis">both</em> <code class="code-inline tex2jax_ignore">False</code>, and <code class="code-inline tex2jax_ignore">True</code> for all other cases</div></li>
+<li id="li-29"><div class="para" id="p-derived-li-29">
+<code class="code-inline tex2jax_ignore">not</code>: <code class="code-inline tex2jax_ignore">!p</code> returns the opposite boolean value of <code class="code-inline tex2jax_ignore">p</code>
+</div></li>
+</ul>
+</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">www.python.org/</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">thonny.org/</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><code class="code-inline tex2jax_ignore">en.wikipedia.org/wiki/%22Hello,_World!%22_program</code></div></div>
 </div>

@@ -137,5 +137,18 @@
       </p>
     </subsection>
   </section>
+  <section>
+    <title>Arithmetic Operations</title>
+    <p>
+      Back to our list of programming tools we've used before, the first item was <em>Perform arithmetic operations on numbers</em>. We took a slight detour to discuss variables and types, largely because those things will be useful in demonstrating the other programming tools. Python has the same basic arithmetic operations as Racket and NetLogo, namely:
+      <ul>
+        <li><c>+</c> for addition</li>.
+        <li><c>-</c> for subtraction</li>.
+        <li><c>*</c> for multiplication</li>.
+        <li><c>/</c> for division</li>.
+      </ul>
+      These operations work as you would expect. If you have two number values (either literals or variables), you can perform an operation on them by placing
+    </p>
+  </section>
 
 </chapter>
